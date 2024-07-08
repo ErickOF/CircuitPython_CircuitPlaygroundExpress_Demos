@@ -17,12 +17,15 @@ while True:
     # Select the current pixel color
     cpx.pixels[pixel] = color
 
+    # Change the direction if button is pressed
     if cpx.button_a:
         direction = 1
     elif cpx.button_b:
         direction = -1
 
+    # Next pixel on the direction
     pixel += direction
+    # Restart pixel if it is needed
     pixel = 0 if (pixel > 9) else 9 if (pixel < 0) else pixel
 
     time.sleep(0.5)
